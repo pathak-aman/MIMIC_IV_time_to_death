@@ -1,0 +1,32 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "assessment"
+version = "0.0.1"
+description = "Goal is to model the time to death for patients using structured clinicaldata. This should take the form of a time-to-event prediction task, such as estimating theduration from hospital admission to death."
+authors = [
+  { name = "Aman Pathak" },
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License"
+]
+requires-python = "~=3.11.0"
+
+
+[tool.ruff]
+line-length = 99
+src = ["assessment"]
+include = ["pyproject.toml", "assessment/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["assessment"]
+force-sort-within-sections = true
+
