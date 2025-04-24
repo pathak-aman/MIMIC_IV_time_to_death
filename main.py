@@ -91,7 +91,7 @@ def run_feature_creation_pipeline(cohort_df):
 
 
 # # ----------------- LAB TESTS FEATURES ----------------- DONE
-
+    logger.info("----------------- STEP IV - LABEVENTS FEATURES -----------------")
     logger.info(f"Creating lab tests features for {len(cohort_df)} cohort entries.")
     labs_feature_df = create_labsevents_features_chunked(cohort_df, LABEVENTS_PATH)
     logger.info(f"Lab tests features created for {len(labs_feature_df)} cohort entries.")
@@ -102,6 +102,7 @@ def run_feature_creation_pipeline(cohort_df):
 
 
 # # ------------------- TIME WINDOW LAB TEST FEATURES -----------------
+    logger.info("----------------- STEP V - TEMPORAL LABEVENTS FEATURES -----------------")
     logger.info(f"Creating temporal lab tests features for {len(cohort_df)} cohort entries.")
     labs_feature_time_window_df = create_longitudinal_lab_features(cohort_df, LABEVENTS_PATH)
     logger.info(f"Temporal lab tests features created for {len(labs_feature_time_window_df)} cohort entries.")
